@@ -48,11 +48,11 @@ df.dropna(inplace=True)
 df.head()
 # view
 df.head()
+subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "-y markupsafe"])
 
-!pip install markupsafe==2.0.1
+subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
 
-!pip uninstall -y markupsafe
-!pip install markupsafe==2.0.1
 !pip install dataprep --quiet
 
 !pip install --quiet "dask[dataframe]"
