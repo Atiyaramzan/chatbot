@@ -1,0 +1,6 @@
+dataprep
+markupsafe==2.0.1
+keras-tuner
+scikit-learn
+joblib
+streamlit
