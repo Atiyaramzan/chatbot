@@ -10,9 +10,8 @@ Original file is located at
 subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
 
 subprocess.check_call([sys.executable, "-m", "pip", "install", "keras-tuner"])
-
-!pip install --quiet markupsafe==2.0.1
-!pip install --quiet dataprep
+subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
 
 # standard libraries
 import numpy as np # linear algebra
