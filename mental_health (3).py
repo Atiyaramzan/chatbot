@@ -9,7 +9,7 @@ Original file is located at
 
 subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
 
-!pip install --quiet keras-tuner
+subprocess.check_call([sys.executable, "-m", "pip", "install", "keras-tuner"])
 
 !pip install --quiet markupsafe==2.0.1
 !pip install --quiet dataprep
