@@ -53,7 +53,11 @@ subprocess.check_call([sys.executable, "-m", "pip", "install", "-y markupsafe"])
 
 subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
 
+import subprocess
+import sys
+
 subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
+
 !pip install --quiet "dask[dataframe]"
 
 import re
