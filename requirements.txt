@@ -1,6 +1,8 @@
+
+streamlit
 dataprep
-markupsafe==2.0.1
 keras-tuner
+markupsafe==2.0.1
 scikit-learn
 joblib
-streamlit
+tensorflow
