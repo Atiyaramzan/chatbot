@@ -7,12 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1zjecxdJ_ZMOJv1vdWHhtzXwRoYAK64ey
 """
 
-subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
-
-subprocess.check_call([sys.executable, "-m", "pip", "install", "keras-tuner"])
-subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
-subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
-
 # standard libraries
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
@@ -48,18 +42,8 @@ df.dropna(inplace=True)
 df.head()
 # view
 df.head()
-subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
-subprocess.check_call([sys.executable, "-m", "pip", "install", "-y markupsafe"])
 
-subprocess.check_call([sys.executable, "-m", "pip", "install", "markupsafe==2.0.1"])
-
-import subprocess
 import sys
-
-subprocess.check_call([sys.executable, "-m", "pip", "install", "dataprep"])
-
-!pip install --quiet "dask[dataframe]"
-
 import re
 
 def clean_text(text):
@@ -132,8 +116,6 @@ from tensorflow import keras
 from tqdm.keras import TqdmCallback
 
 # Ensure keras_tuner is installed
-!pip install --quiet keras-tuner
-
 # Now import keras_tuner
 import keras_tuner as kt
 
@@ -248,8 +230,6 @@ print('\nBest epoch: %d' % (best_epoch,))
 hypermodel = tuner.hypermodel.build(best_hps)
 # model summary
 keras.utils.plot_model(hypermodel,show_shapes=True,show_dtype=True)
-
-!pip install keras-tuner --quiet
 
 import tensorflow as tf
 from tensorflow import keras
@@ -415,7 +395,6 @@ except Exception as e:
     print(f"Error downloading vectorizer file: {e}")
 
 # app.py
-!pip install streamlit
 
 import streamlit as st
 import joblib
