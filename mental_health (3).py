@@ -457,9 +457,36 @@ if st.button("Analyze"):
             predicted_label_text = label_mapping.get(predicted_class, "Unknown label")
 
             st.write("🤖 Bot:", f"Based on your message, there is: **{predicted_label_text}**")
+# Step 1: Classify into friendly chatbot reply
+label_mapping = {
+    0: "🙂 You're doing okay based on what you shared. If you're ever unsure or just need someone to talk to, I'm here.",
+    1: "😟 It sounds like you're dealing with something heavy. You're not alone — I'm here to support you. Would you like to see some mental health resources?"
+}
+
+predicted_label_text = label_mapping.get(predicted_class, "I'm not quite sure how to interpret this. Want to try saying it another way?")
+
+# Step 2: Use chat-style response
+st.chat_message("assistant").write(predicted_label_text)
+if st.button("Analyze"):
+    if user_input.strip():
+        try:
+            # Clean input if needed (or just use raw for now)
+            X = vectorizer.transform([user_input])
+            prediction_proba = model.predict(X)
+            predicted_class = (prediction_proba > 0.5).astype("int32")[0][0]
+
+            # 🔁 Replace old response logic with friendly chatbot-style messages
+            label_mapping = {
+                0: "🙂 You're doing okay based on what you shared. If you're ever unsure or just need someone to talk to, I'm here.",
+                1: "😟 It sounds like you're dealing with something heavy. You're not alone — I'm here to support you. Would you like to see some mental health resources?"
+            }
+
+            predicted_label_text = label_mapping.get(predicted_class, "I'm not quite sure how to interpret this. Want to try saying it another way?")
+            st.chat_message("assistant").write(predicted_label_text)
 
         except Exception as e:
             st.error(f"An error occurred during analysis: {e}")
-
     else:
         st.warning("Please enter a message.")
+
+    
